@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>AI 产品经理的 Agent 实战课</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="以 Claude Code 为教材，从「会用 AI」进阶到「会造 AI Agent 产品」">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+  <!-- Docsify Themes -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+  <style>
+    :root {
+      --base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
+      --theme-color: #7c5cfc;
+      --sidebar-width: 280px;
+      --sidebar-nav-link-color--active: #7c5cfc;
+      --sidebar-nav-link-border-color--active: #7c5cfc;
+      --blockquote-border-color: #7c5cfc;
+      --notice-tip-border-color: #7c5cfc;
+    }
+
+    .markdown-section h1 {
+      font-size: 2em;
+      margin-top: 0;
+    }
+
+    .markdown-section table {
+      display: table;
+      width: 100%;
+    }
+
+    .markdown-section table th {
+      background-color: rgba(124, 92, 252, 0.1);
+      font-weight: 600;
+    }
+
+    .app-name-link img {
+      max-width: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .sidebar .app-name-link {
+      font-size: 1.2em;
+      font-weight: 700;
+    }
+
+    /* Custom badge styles */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.75em;
+      font-weight: 600;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .badge-l2 { background: #e8f5e9; color: #2e7d32; }
+    .badge-l3 { background: #fff3e0; color: #e65100; }
+    .badge-l4 { background: #fce4ec; color: #c62828; }
+
+    /* Better code blocks */
+    .markdown-section code {
+      border-radius: 4px;
+    }
+
+    /* Progress indicator */
+    .progress-bar {
+      height: 4px;
+      background: linear-gradient(90deg, #7c5cfc, #a78bfa);
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 999;
+      transition: width 0.3s;
+    }
+
+    /* Callout boxes */
+    .callout {
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 16px 0;
+    }
+    .callout-tip {
+      background: rgba(124, 92, 252, 0.08);
+      border-left: 4px solid #7c5cfc;
+    }
+    .callout-warn {
+      background: rgba(255, 152, 0, 0.08);
+      border-left: 4px solid #ff9800;
+    }
+    .callout-pm {
+      background: rgba(76, 175, 80, 0.08);
+      border-left: 4px solid #4caf50;
+    }
+
+    /* Cover page */
+    section.cover {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%) !important;
+    }
+    section.cover .cover-main > p:last-child a {
+      border-color: #7c5cfc;
+      color: #7c5cfc;
+    }
+    section.cover .cover-main > p:last-child a:hover {
+      background: #7c5cfc;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">正在加载教程...</div>
+  <script>
+    window.$docsify = {
+      name: '🚀 AI PM Agent 实战课',
+      repo: 'https://github.com/icapk/Claude-AIPM',
+      coverpage: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      subMaxLevel: 3,
+      auto2top: true,
+      search: {
+        placeholder: '搜索教程内容',
+        noData: '没有找到相关结果',
+        paths: 'auto',
+        depth: 3,
+      },
+      pagination: {
+        previousText: '上一章',
+        nextText: '下一章',
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      copyCode: {
+        buttonText: '复制',
+        errorText: '失败',
+        successText: '已复制',
+      },
+      progress: {
+        position: "top",
+        color: "var(--theme-color)",
+        height: "3px",
+      },
+      tabs: {
+        persist: true,
+        sync: false,
+        theme: 'classic',
+      },
+    }
+  </script>
+  <!-- Docsify Core -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <!-- Plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-markdown.min.js"></script>
+  <!-- Mermaid -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify-mermaid@2.0.1/dist/docsify-mermaid.js"></script>
+  <script>mermaid.initialize({ startOnLoad: false, theme: 'dark' })</script>
+  <!-- Emoji -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/emoji.min.js"></script>
+</body>
+</html>
