@@ -7,7 +7,9 @@
 - 🎯 **产品视角** — 每个技术概念都映射到产品决策
 - ⚡ **5 天 10 小时** — 从任何段位升级到 L4
 
-[开始学习](#/chapters/00-levels)
-[GitHub](https://github.com/icapk/Claude-AIPM)
+<p>
+  <a href="#/chapters/00-levels">开始学习</a>
+  <a href="https://github.com/icapk/Claude-AIPM">GitHub</a>
+</p>
 
 <!-- background image -->
